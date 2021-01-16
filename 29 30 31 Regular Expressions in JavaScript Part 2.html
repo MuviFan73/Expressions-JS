@@ -1,0 +1,46 @@
+<html>
+    <title>#29 Regular Expressions in JavaScript Part 2</title>
+    <script type="text/javascript">
+        function validate()
+        {
+            var username= document.getElementById("uname").value;
+            /*var regx = /[sdp]imple/;
+             var regx = /[a-x]imple/i; 
+             var regx = /[a-x A-X]imple/; 
+             var regx = /[0-5]abc/; 
+             var regx = /[0-5]ab[3-5]/;
+
+             exclude particular first character 
+                 var regx = /[^sdp]imple{}/; 
+
+                 for valid Indian phone number
+                 var regx = /^[7-9][0-9]{9}$/;
+                 
+                 for email id */
+                 var regx = /^([a-z 0-9 \. -]+)@([a-z 0-9 -]+).([a-z]{2,8})(.[a-z]{2,8})?/;
+
+            if(regx.test(username))
+            {
+                document.getElementById("lb1").innerHTML="Valid";
+                document.getElementById("lb1").style.visibility="visible";
+                document.getElementById("lb1").style.color="green";
+            }
+            else
+            {
+                document.getElementById("lb1").innerHTML="Invalid";
+                document.getElementById("lb1").style.visibility="visible";
+                document.getElementById("lb1").style.color="red";
+            }
+        }
+    </script>
+    <head>
+        <body>
+            <form>
+                <input id="uname" placeholder="Username" type="text"/>
+                <label id="lb1" style="color:red; visibility:hidden;">Invalid Username</label>
+                <br>
+                <button onclick="validate()" type="button">Submit</button>
+            </form>
+        </body>
+    </head>
+</html>
